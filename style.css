@@ -1,0 +1,649 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body, html {
+    width: 100%;
+    height: auto; /* Allow the height to adjust based on content */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* Ensure the body is scrollable */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    background-color: #00000000;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    right:290px;
+}
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hamburg,
+.cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    display: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}   
+
+.nav-container .links {
+    display: flex;
+}
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #187c19;;
+    transition: 0.2s linear;
+}
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+.nav-container .links a:hover{
+    color: #187c19;;
+}
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow:  0 0 20px black;
+    transition: 0.2s linear;
+}
+.dropdown .links a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+.dropdown .links a:hover{
+    background-color: #187c19;
+}
+
+/* Black background with floating circles */
+.floating-circles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; /* Black background */
+    overflow: hidden;
+    z-index: -1; /* Ensures it stays in the background */
+}
+
+.floating-circles .circles {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.floating-circles .circles li {
+    position: absolute;
+    display: block;
+    width: 20px; /* Base size of the circles */
+    height: 20px;
+    background: rgba(9, 140, 11, 0.532); /* Defocused green color */
+    border-radius: 50%;
+    animation: float 25s linear infinite;
+    bottom: -150px; /* Start below the viewport */
+    filter: blur(5px); /* Adds defocused effect */
+}
+
+/* Random sizes for the circles */
+.floating-circles .circles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 20s;
+    animation-delay: 0s;
+}
+
+.floating-circles .circles li:nth-child(2) {
+    left: 10%;
+    width: 40px;
+    height: 40px;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+
+.floating-circles .circles li:nth-child(3) {
+    left: 70%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 18s;
+    animation-delay: 4s;
+}
+
+.floating-circles .circles li:nth-child(4) {
+    left: 40%;
+    width: 100px;
+    height: 100px;
+    animation-duration: 22s;
+    animation-delay: 0s;
+}
+
+.floating-circles .circles li:nth-child(5) {
+    left: 65%;
+    width: 50px;
+    height: 50px;
+    animation-duration: 16s;
+    animation-delay: 3s;
+}
+
+.floating-circles .circles li:nth-child(6) {
+    left: 75%;
+    width: 120px;
+    height: 120px;
+    animation-duration: 12s;
+    animation-delay: 0s;
+}
+
+.floating-circles .circles li:nth-child(7) {
+    left: 35%;
+    width: 90px;
+    height: 90px;
+    animation-duration: 20s;
+    animation-delay: 1s;
+}
+
+.floating-circles .circles li:nth-child(8) {
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    animation-duration: 17s;
+    animation-delay: 2s;
+}
+
+.floating-circles .circles li:nth-child(9) {
+    left: 20%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 19s;
+    animation-delay: 2s;
+}
+
+.floating-circles .circles li:nth-child(10) {
+    left: 85%;
+    width: 110px;
+    height: 110px;
+    animation-duration: 18s;
+    animation-delay: 5s;
+}
+
+.floating-circles .circles li:nth-child(11) {
+    left: 80%;
+    width: 180px;
+    height: 180px;
+    animation-duration: 24s;
+    animation-delay: 0s;
+}
+
+.floating-circles .circles li:nth-child(12) {
+    left: 65%;
+    width: 90px;
+    height: 90px;
+    animation-duration: 20s;
+    animation-delay: 1s;
+}
+
+.floating-circles .circles li:nth-child(13) {
+    left: 58%;
+    width: 70px;
+    height: 70px;
+    animation-duration: 13s;
+    animation-delay: 2s;
+}
+
+.floating-circles .circles li:nth-child(14) {
+    left: 24%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 12s;
+    animation-delay: 4s;
+}
+
+.floating-circles .circles li:nth-child(15) {
+    left: 10%;
+    width: 110px;
+    height: 110px;
+    animation-duration: 20s;
+    animation-delay: 3s;
+}
+
+.floating-circles .circles li:nth-child(16) {
+    left: 25%;
+    width: 140px;
+    height: 140px;
+    animation-duration: 26s;
+    animation-delay: 2s;
+}
+
+
+/* Animation for floating circles */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh); /* Move out of the viewport */
+        opacity: 0;
+    }
+}
+
+section {
+    width: 100%;
+    min-height: 100vh; /* Ensure each section takes at least the full viewport height */
+    color: white;
+    text-align: center;
+    margin-top: 50px; /* Add margin to separate from the fixed nav */
+    box-sizing: border-box;
+    height: 100vh; /* Each section takes the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.home {
+    background-color: #1a1a1a00; /* Dark background for Home */
+}
+
+.aboutus {
+    background-color: #2a2a2a00; /* Slightly lighter background for About Us */
+}
+
+.contactus {
+    background-color: #3a3a3a00; /* Slightly lighter background for Contact Us */
+}
+
+
+#about .wrapper{
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 5rem;
+    padding-right: 45rem;
+    gap: 3rem;
+}
+
+.heading{
+    font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+    color: #187c19; /* or any highlight color you prefer */
+    font-weight: bold;
+    margin-bottom: 34px;
+    margin-left: 435px;
+    margin-top: 10px;
+}
+
+.highlight-txt {
+    color: #ffffff; /* or any highlight color you prefer */
+    font-weight: bold;
+}
+
+.justified-paragraph {
+    text-align: justify;
+    text-align-last: left;
+    font-size: 1.1rem;
+    line-height: 2;
+    padding-left: 40rem;
+    padding-right: 11rem;
+    padding-top: 0rem;
+}
+#about .details .heading {              
+    text-align: start;        
+    padding-left: 2rem;        
+}
+    
+#about h1{
+    font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+
+}
+#about h3{
+    color: #08080800;
+    margin-top: 30px;
+}
+
+.picture {
+    width: 560px;
+    height: 560px;
+    margin-top: 810px;
+    margin-left: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    animation: pulse 3s ease-in-out infinite; /* 💚 pulsing forever */
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* 💥 PULSE Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+#contact-section .wrapper{
+    --wrapper-max-width: 1000px;
+    --wrapper-padding: 5rem;
+   
+    width: min(var(--wrapper-max-width), 100% - var(--wrapper-padding));
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  
+  #contact-section form{
+    width: 100%;
+  }
+  
+  #contact-section .heading {
+    color: #187c19;
+    font-size: 2rem;
+    line-height: 2.5;
+    margin-top: -45px;
+    text-align: center;  /* Centers text horizontally */
+    width: 100%;         /* Ensures full width for centering */
+    position: absolute;  /* Allows vertical centering */
+    left: 21%;           /* Moves the element 50% from the left of the parent */
+    transform: translateX(-50%); /* Adjusts by 50% of its own width to truly center */
+}
+  
+  #contact-section .heading .highlight-txt{
+    color: #ffffff;
+    font-size: 2rem;
+    
+  } 
+
+  #contact-section .subheading{
+    font-size: 1.1rem;
+    margin-top: -1rem;
+    margin-top: 20px;
+  }
+  
+  #contact-section input, 
+  #contact-section textarea {
+      font-size: var(--XS-Fsize);
+      background-color: rgba(255, 255, 255, 0.19);
+      padding: 1rem;
+      width: 100%;
+      border: 2px solid transparent; /* Start with a transparent border */
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      color: rgba(255, 255, 255, 0.199);
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+      position: relative; /* Position relative for pseudo-elements */
+      top: 30px; /* Adjust position to create space for the heading */
+  }
+  
+  /* Input and Textarea hover effect */
+  #contact-section input:hover, 
+  #contact-section textarea:hover {
+      background-color: rgba(67, 67, 67, 0.288); /* Lightened background color on hover */
+      border-color: #187c19; /* Green border color on hover */
+      color: rgba(255, 255, 255, 0.625); /* Text color change on hover */
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow around input/textarea */
+  }
+  
+  #contact-section textarea{
+    height: 15rem;
+  }
+  
+  #contact-section .buttons-container{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  #contact-section .buttons-container button{
+    font-size: var(--XS-Fsize);
+    padding: 0.7rem 2.6rem;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    position: relative;
+    top: 20px;
+
+  }
+  
+  .button-class {
+    position: relative;
+    z-index: 20; /* Ensure it's above all other elements */
+    background-color: green; /* Example for visibility */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+   
+}
+
+  .buttons-container button.send-btn{
+    background-color: rgb(17, 84, 17);
+    color: inherit;
+  }
+  
+  .buttons-container button.clear-btn{
+    background-color: gray;
+    opacity: 40%;
+  }
+  
+  @media(width > 500px){
+    #contact-section .name-input{
+      display: flex;
+      gap: 1.5rem;
+    }
+  }
+  
+  @media(width > 1000px){
+    #contact-section .wrapper{
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 5rem;
+    }
+  
+    #contact-section form{
+      flex: 1.2px;
+    }
+  }
+  
+  /* Button Hover Effect */
+.buttons-container button.send-btn {
+    background-color: rgb(10, 55, 10);
+    color: inherit;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* smooth transition */
+}
+
+.buttons-container button.send-btn:hover {
+    background-color: rgb(4, 125, 4); /* Darker shade on hover */
+    color: #fff; /* Change text color on hover */
+    transform: scale(1.05); /* Slight pop on hover */
+}
+
+.buttons-container button.clear-btn {
+    background-color: gray;
+    opacity: 40%;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.buttons-container button.clear-btn:hover {
+    background-color: darkgray; /* Darker gray on hover */
+    opacity: 100%; /* Full opacity on hover */
+}
+
+.logo1 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1080px; /* Adjust size as needed */
+    height: 1080px;
+    z-index: -1;
+}
+
+.logo1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+    opacity: 0.3; /* for that 'low opacity' effect if needed */
+}
+/* Float-up animation */
+@keyframes floatUp {
+    0% {
+        transform: translate(-50%, 30%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -30%);
+        opacity: 1;
+    }
+}
+
+/* Shared wrapper for Ryan & Mira */
+.avatar-wrapper {
+    position: absolute;
+    top: 40%; /* Adjust as needed */
+    left: 40%;
+    transform: translate(-50%, -30%);
+    display: inline-block;
+    text-decoration: none;
+    z-index: 2;
+}
+
+/* Shared style for each avatar box */
+.avatar {
+    width: 900px;
+    height: 900px;
+    animation: floatUp 1.5s ease-out forwards;
+    text-align: center;
+}
+
+
+/* Image inside the avatar */
+.avatar img {
+    width: 230%;
+    height: 140%;
+    margin-left: -145px;
+    margin-top: 150px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+.view-more-btn {
+    position: absolute;
+    top: 700px;
+    right: 680px; /* Or left: 20px if you want it on the left */
+    z-index: 10;
+    padding: 10px 20px;
+    background-color: #77777768;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #00b30993;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 5px rgba(94, 255, 0, 0.8);
+    border-radius: 100px;
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.view-more-btn {
+    /* your existing styles here */
+    animation: zoomIn 4s ease forwards, pulse 2.5s ease-in-out infinite;
+    animation-delay: 0.3s, 1.5s;
+}

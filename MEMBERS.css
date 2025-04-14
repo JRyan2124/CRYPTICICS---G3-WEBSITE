@@ -1,0 +1,350 @@
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.team-section {
+  text-align: center;
+  padding: 140px 0;
+}
+
+.team-section h2 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.team-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .team-section h2 {
+    color: #1ea500;
+    font-size: 2rem;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .team-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 0px; /* fixed negative padding */
+  }
+  
+  .member {
+    background-color: #36a710;
+    padding: 1px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 360px;
+    opacity: 0;
+    animation: fadeUp 1s forwards;
+  }
+  
+  .member:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  .member:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  .member:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  .member:nth-child(4) {
+    animation-delay: 0.8s;
+  }
+  .member:nth-child(5) {
+    animation-delay: 1s;
+  }
+  .member:nth-child(6) {
+    animation-delay: 1.2s;
+  }
+  
+  .member img {
+    display: block;
+    width: 180px;
+    height: 360px;
+    object-fit: cover;
+  }
+  
+  .member.down {
+    margin-top: 140px;
+  }
+  
+  .member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(35, 192, 0);
+  }
+
+  .highlight-txt {
+    color: #ffffff; /* You can change this to any color you want */
+
+    font-weight: bold;
+  }
+  
+/* Black background with floating circles */
+.floating-circles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; /* Black background */
+    overflow: hidden;
+    z-index: -1; /* Ensures it stays in the background */
+}
+
+.floating-circles .circles {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.floating-circles .circles li {
+    position: absolute;
+    display: block;
+    width: 20px; /* Base size of the circles */
+    height: 20px;
+    background: rgba(9, 140, 11, 0.532); /* Defocused green color */
+    border-radius: 50%;
+    animation: float 25s linear infinite;
+    bottom: -150px; /* Start below the viewport */
+    filter: blur(5px); /* Adds defocused effect */
+}
+
+/* Random sizes for the circles */
+.floating-circles .circles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 20s;
+    animation-delay: 0s;
+}
+
+.floating-circles .circles li:nth-child(2) {
+    left: 10%;
+    width: 40px;
+    height: 40px;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+
+.floating-circles .circles li:nth-child(3) {
+    left: 70%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 18s;
+    animation-delay: 4s;
+}
+
+.floating-circles .circles li:nth-child(4) {
+    left: 40%;
+    width: 100px;
+    height: 100px;
+    animation-duration: 22s;
+    animation-delay: 0s;
+}
+
+.floating-circles .circles li:nth-child(5) {
+    left: 65%;
+    width: 50px;
+    height: 50px;
+    animation-duration: 16s;
+    animation-delay: 3s;
+}
+
+.floating-circles .circles li:nth-child(6) {
+    left: 75%;
+    width: 120px;
+    height: 120px;
+    animation-duration: 12s;
+    animation-delay: 0s;
+}
+
+.floating-circles .circles li:nth-child(7) {
+    left: 35%;
+    width: 90px;
+    height: 90px;
+    animation-duration: 20s;
+    animation-delay: 1s;
+}
+
+.floating-circles .circles li:nth-child(8) {
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    animation-duration: 17s;
+    animation-delay: 2s;
+}
+
+.floating-circles .circles li:nth-child(9) {
+    left: 20%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 19s;
+    animation-delay: 2s;
+}
+
+.floating-circles .circles li:nth-child(10) {
+    left: 85%;
+    width: 110px;
+    height: 110px;
+    animation-duration: 18s;
+    animation-delay: 5s;
+}
+
+.floating-circles .circles li:nth-child(11) {
+    left: 80%;
+    width: 180px;
+    height: 180px;
+    animation-duration: 24s;
+    animation-delay: 0s;
+}
+
+.floating-circles .circles li:nth-child(12) {
+    left: 65%;
+    width: 90px;
+    height: 90px;
+    animation-duration: 20s;
+    animation-delay: 1s;
+}
+
+.floating-circles .circles li:nth-child(13) {
+    left: 58%;
+    width: 70px;
+    height: 70px;
+    animation-duration: 13s;
+    animation-delay: 2s;
+}
+
+.floating-circles .circles li:nth-child(14) {
+    left: 24%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 12s;
+    animation-delay: 4s;
+}
+
+.floating-circles .circles li:nth-child(15) {
+    left: 10%;
+    width: 110px;
+    height: 110px;
+    animation-duration: 20s;
+    animation-delay: 3s;
+}
+
+.floating-circles .circles li:nth-child(16) {
+    left: 25%;
+    width: 140px;
+    height: 140px;
+    animation-duration: 26s;
+    animation-delay: 2s;
+}
+
+
+/* Animation for floating circles */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh); /* Move out of the viewport */
+        opacity: 0;
+    }
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 10px 15px;
+    border-radius: 100px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: rgba(12, 145, 15, 0.8); /* Green background on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.back-button i {
+    font-size: 1.5rem; /* Adjust the size of the arrow icon */
+}
+
+/* Fade-in animation for the heading */
+.fade-in {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2.5s ease forwards; /* Apply fade-in animation */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Slight upward offset */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Reset position */
+    }
+}
+
+/* Slide-in animation */
+.slide-in {
+    opacity: 0; /* Initially hidden */
+    animation: slideIn 2.5s ease forwards; /* Apply slide-in animation */
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Slide in from the left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Reset position */
+    }
+}
